@@ -166,10 +166,16 @@ export default function MasterclassLanding() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Header */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
-              <Code className="h-5 w-5 text-white" />
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 flex items-center justify-center">
+              <Image
+                src="/Icon.png"
+                alt="SE² Logo"
+                width={40}
+                height={40}
+                className="w-full h-full object-contain"
+              />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Samish.dev
@@ -185,9 +191,11 @@ export default function MasterclassLanding() {
             <Link href="#testimonials" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">
               Reviews
             </Link>
+            <a target="_blank" href="https://samishdev.notion.site/18c68ecb8f3780889385f37306d1c4e8?pvs=105">
             <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transform hover:scale-105 transition-all duration-300">
               Enroll Now
             </Button>
+            </a>
           </nav>
         </div>
       </header>
@@ -221,6 +229,7 @@ export default function MasterclassLanding() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
+                <a href="#enrollment">
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-lg px-8 py-6 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -228,6 +237,7 @@ export default function MasterclassLanding() {
                   See the Offer
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
+                </a>
                 <Button
                   size="lg"
                   variant="outline"
@@ -273,7 +283,7 @@ export default function MasterclassLanding() {
             <div className="text-center mb-12">
               <div className="w-20 md:w-24 h-20 md:h-24 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <Image
-                  src="/placeholder.svg?height=96&width=96"
+                  src="/sami.png?height=96&width=96"
                   alt="Sami"
                   width={96}
                   height={96}
@@ -343,61 +353,57 @@ export default function MasterclassLanding() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8">
-              Who's the Course{" "}
+              Who's the course{" "}
               <span className="bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
-                NOT For?
+                not for?
               </span>
             </h2>
 
             <div className="bg-white rounded-2xl p-6 md:p-8 lg:p-12 shadow-lg">
               <p className="text-lg text-gray-600 mb-8">
-                I want to be completely transparent about who should and shouldn't take this course:
+                This master class isn't for everyone, so this isn't for you if:
               </p>
 
-              <div className="grid md:grid-cols-2 gap-8 text-left">
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-red-600 mb-4">❌ This course is NOT for you if:</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>You're looking for a quick fix or magic solution</span>
-                    </li>
-                    <li className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>You don't have basic JavaScript/TypeScript knowledge</span>
-                    </li>
-                    <li className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>You're not willing to put in the work and practice</span>
-                    </li>
-                    <li className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>You expect to become a senior engineer overnight</span>
-                    </li>
-                  </ul>
+              <div className="space-y-6 text-left max-w-3xl mx-auto">
+                <div className="flex items-start space-x-4 p-4 bg-red-50 rounded-xl border-l-4 border-red-500">
+                  <div className="text-red-500 text-2xl flex-shrink-0 mt-1">❌</div>
+                  <p className="text-gray-700">
+                    You're not willing to put in the time and effort and commit to consistency for the long term.
+                  </p>
                 </div>
 
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-green-600 mb-4">✅ This course IS perfect if:</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>You want to level up your engineering skills</span>
-                    </li>
-                    <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>You're committed to doing the work</span>
-                    </li>
-                    <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>You want to build production-ready systems</span>
-                    </li>
-                    <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>You're ready to invest in your career</span>
-                    </li>
-                  </ul>
+                <div className="flex items-start space-x-4 p-4 bg-red-50 rounded-xl border-l-4 border-red-500">
+                  <div className="text-red-500 text-2xl flex-shrink-0 mt-1">❌</div>
+                  <p className="text-gray-700">
+                    You have no previous experience in coding, this is a booster master class not a starter course.
+                    (Check FAQ for more details)
+                  </p>
                 </div>
+
+                <div className="flex items-start space-x-4 p-4 bg-red-50 rounded-xl border-l-4 border-red-500">
+                  <div className="text-red-500 text-2xl flex-shrink-0 mt-1">❌</div>
+                  <p className="text-gray-700">
+                    You believe this course will instantly land you a job. While this program equips you with the skills
+                    and knowledge to advance your career, it's not a guarantee of immediate employment. Your success
+                    depends on your dedication and effort beyond the course.
+                  </p>
+                </div>
+
+                <div className="flex items-start space-x-4 p-4 bg-red-50 rounded-xl border-l-4 border-red-500">
+                  <div className="text-red-500 text-2xl flex-shrink-0 mt-1">❌</div>
+                  <p className="text-gray-700">
+                    You're only looking for theory. This course focuses on hands-on learning, I promise you that you
+                    will write an insane amount of code to craft the experience in your finger muscle memory. If you're
+                    not ready to get your hands dirty, this might not be the right fit.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-8 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl border border-green-200">
+                <p className="text-lg font-semibold text-gray-800 text-center">
+                  Again, the one thing we can guarantee is that if you apply the learnables, apply the skills, and build
+                  several projects, your career will rise to the next level.
+                </p>
               </div>
             </div>
           </div>
@@ -483,6 +489,7 @@ export default function MasterclassLanding() {
                 Ready to Master These Skills?
               </h3>
               <p className="text-gray-600 mb-6">Join the next cohort and transform your software engineering career</p>
+              <a href="#enrollment">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
@@ -490,6 +497,7 @@ export default function MasterclassLanding() {
                 See the Offer
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -509,7 +517,7 @@ export default function MasterclassLanding() {
                   </span>
                 </h2>
                 <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                  With over 8 years of experience at top tech companies, Samish brings real-world expertise and
+                  With many years of experience at top tech companies, we brings real-world expertise and
                   practical insights to every lesson.
                 </p>
               </div>
@@ -521,7 +529,7 @@ export default function MasterclassLanding() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Industry Experience</h3>
-                    <p className="text-gray-600">8+ years building scalable systems at Fortune 500 companies</p>
+                    <p className="text-gray-600">Many years building scalable systems at top companies</p>
                   </div>
                 </div>
 
@@ -531,7 +539,7 @@ export default function MasterclassLanding() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Teaching Excellence</h3>
-                    <p className="text-gray-600">Mentored 100+ engineers and led technical training programs</p>
+                    <p className="text-gray-600">Mentored many engineers and led technical training programs</p>
                   </div>
                 </div>
 
@@ -541,7 +549,7 @@ export default function MasterclassLanding() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Proven Results</h3>
-                    <p className="text-gray-600">Students have landed roles at Google, Microsoft, Amazon, and more</p>
+                    <p className="text-gray-600">Students have landed jobs, got raises, and finished personal projects</p>
                   </div>
                 </div>
               </div>
@@ -550,7 +558,7 @@ export default function MasterclassLanding() {
             <div className="relative order-first lg:order-last">
               <div className="relative z-10">
                 <Image
-                  src="/placeholder.svg?height=600&width=500"
+                  src="/image.png?height=600&width=500"
                   alt="Samish - Course Instructor"
                   width={500}
                   height={600}
@@ -609,7 +617,7 @@ export default function MasterclassLanding() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div id="enrollment" className="container mx-auto px-6 relative z-10">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16 md:mb-20">
@@ -715,6 +723,7 @@ export default function MasterclassLanding() {
                         </div>
                         <div className="text-base md:text-lg text-gray-600 mb-6">Next cohort: June 1st, 2025</div>
 
+                        <a target="_blank" href="https://samishdev.notion.site/18c68ecb8f3780889385f37306d1c4e8?pvs=105">
                         <Button
                           size="lg"
                           className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-base md:text-lg py-4 md:py-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
@@ -723,6 +732,7 @@ export default function MasterclassLanding() {
                           Enroll Now
                           <ArrowRight className="ml-2 h-5 w-5" />
                         </Button>
+                        </a>
                       </div>
 
                       {/* Bonuses Section */}
@@ -988,9 +998,15 @@ export default function MasterclassLanding() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="space-y-4 col-span-1 md:col-span-2 lg:col-span-1">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
-                  <Code className="h-5 w-5 text-white" />
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 flex items-center justify-center">
+                  <Image
+                    src="/Icon.png"
+                    alt="SE² Logo"
+                    width={32}
+                    height={32}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <span className="text-lg md:text-xl font-bold">Sami Shames El Deen</span>
               </div>
@@ -1001,17 +1017,17 @@ export default function MasterclassLanding() {
               <h3 className="font-semibold mb-4">Links</h3>
               <ul className="space-y-2 text-gray-400 text-sm md:text-base">
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link target="_blank" href="https://www.instagram.com/samish.dev/" className="hover:text-white transition-colors">
                     My Instagram page
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link target="_blank" href="https://www.youtube.com/@SamiSh-Dev?skip_registered_account_check=true" className="hover:text-white transition-colors">
                     My Youtube channel
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link target="_blank" href="https://www.linkedin.com/in/samish-dev" className="hover:text-white transition-colors">
                     My LinkedIn profile
                   </Link>
                 </li>
@@ -1019,20 +1035,15 @@ export default function MasterclassLanding() {
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4">Workshop</h3>
+              <h3 className="font-semibold mb-4">Interested in a workshop?</h3>
               <ul className="space-y-2 text-gray-400 text-sm md:text-base">
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Interested in a workshop?
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link target="_blank" href="https://www.whatsapp.com/channel/0029Vais5VxKgsNwxnai1K0s" className="hover:text-white transition-colors">
                     Stay updated
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link target="_blank" href="mailto:samish.business.dev@gmail.com" className="hover:text-white transition-colors">
                     Reach out to setup one
                   </Link>
                 </li>
@@ -1043,7 +1054,7 @@ export default function MasterclassLanding() {
               <h3 className="font-semibold mb-4">Contact</h3>
               <ul className="space-y-2 text-gray-400 text-sm md:text-base">
                 <li>
-                  <a href="mailto:samish.business.dev@gmail.com" className="hover:text-white transition-colors">
+                  <a target="_blank" href="mailto:samish.business.dev@gmail.com" className="hover:text-white transition-colors">
                     samish.business.dev@gmail.com
                   </a>
                 </li>
