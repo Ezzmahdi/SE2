@@ -930,7 +930,7 @@ export default function MasterclassLanding() {
       {/* FAQ Section */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
                 Frequently Asked{" "}
@@ -938,18 +938,70 @@ export default function MasterclassLanding() {
                   Questions
                 </span>
               </h2>
-              <p className="text-lg md:text-xl text-gray-600">Everything you need to know about the SE2 Masterclass</p>
+              <p className="text-lg md:text-xl text-gray-600 mb-8">Everything you need to know about the SE2 Masterclass</p>
+              
+              {/* Scroll hint */}
+              <div className="flex items-center justify-center space-x-2 text-sm text-gray-500 mb-8">
+                <span>👈</span>
+                <span>Scroll horizontally to explore all questions</span>
+                <span>👉</span>
+              </div>
             </div>
 
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <CardContent className="p-6 md:p-8">
-                    <h3 className="text-lg md:text-xl font-semibold mb-4 text-gray-900">{faq.question}</h3>
-                    <p className="text-gray-600 leading-relaxed text-sm md:text-base">{faq.answer}</p>
-                  </CardContent>
-                </Card>
-              ))}
+            {/* Horizontal Scrolling FAQ Cards */}
+            <div className="relative">
+              {/* Gradient overlays for scroll indication */}
+              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-blue-50 to-transparent z-10 pointer-events-none"></div>
+              
+              <div className="overflow-x-auto scrollbar-hide pb-4">
+                <div className="flex space-x-6 w-max">
+                  {faqs.map((faq, index) => (
+                    <div
+                      key={index}
+                      className="group relative w-80 md:w-96 flex-shrink-0"
+                    >
+                      {/* Card */}
+                      <div className="relative bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/50 hover:border-blue-200 h-full overflow-hidden">
+                        {/* Question number indicator */}
+                        <div className="absolute -top-3 -right-3 w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-sm font-bold shadow-lg">
+                          {index + 1}
+                        </div>
+                        
+                        {/* Decorative corner */}
+                        <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-br-3xl opacity-50"></div>
+                        
+                        {/* Content */}
+                        <div className="relative z-10">
+                          <h3 className="text-lg md:text-xl font-bold mb-4 text-gray-900 group-hover:text-blue-600 transition-colors duration-300 leading-tight">
+                            {faq.question}
+                          </h3>
+                          <p className="text-gray-600 leading-relaxed text-sm md:text-base group-hover:text-gray-700 transition-colors duration-300">
+                            {faq.answer}
+                          </p>
+                        </div>
+                        
+                        {/* Hover effect background */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        {/* Bottom accent line */}
+                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-b-2xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Navigation dots */}
+              <div className="flex justify-center mt-8 space-x-2">
+                {faqs.map((_, index) => (
+                  <div
+                    key={index}
+                    className="w-2 h-2 bg-gray-300 rounded-full hover:bg-blue-500 transition-colors duration-200 cursor-pointer"
+                  ></div>
+                ))}
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </div>
             </div>
           </div>
         </div>
